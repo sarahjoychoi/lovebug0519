@@ -5,41 +5,46 @@
     <title>about</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <style>
-    	body{
-    		height: auto;
-    		width: 100%;
-    		padding: 20px;
-    		font-family: Helvetica;
-           	box-sizing: border-box;
-    	}
+      body {
+        height: auto;
+        width: 100%;
+        padding: 20px;
+        font-family: Helvetica;
+        box-sizing: border-box;
+	background-color: black; /* Inverted color */
+        color: white; /* Inverted color */
+      }
 
-        #short {
-          	overflow: hidden;
-        }
+      #short {
+        overflow: hidden;
+      }
 
-        #long {
-          	overflow-y: scroll;
-        }
+      #long {
+        overflow-y: scroll;
+      }
 
-    	div{
-    		font-size: 18pt;
-    		width: 80vw;
-            	margin: auto;
-    	}
+      div {
+        font-size: 18pt;
+        width: 80vw;
+        margin: auto;
+      }
 
-        a{
-            text-decoration: none;
-        }
+      a {
+        text-decoration: none;
+      }
 
-        #sarah, .credits, #contribute:hover {
-            color: black;
-        }
+      #sarah,
+      .credits,
+      #contribute:hover {
+        color: white; /* Inverted color */
+      }
 
-        #sarah:hover, .credits:hover {
-            color: hotpink;
-        }
-	
-        .nav {
+      #sarah:hover,
+      .credits:hover {
+        color: hotpink;
+      }
+
+      .nav {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -47,41 +52,43 @@
         font-size: 12pt;
         color: #a8a8a8;
         height: 10px;
-        }
+      }
 
-        .nav button {
-            margin: 0 15px;
-            background-color: transparent;
-            border: 1px solid #a8a8a8;
-            border-radius: 9px;
-            cursor: pointer;
-            color: #a8a8a8;
-        }
+      .nav button {
+        margin: 0 15px;
+        background-color: transparent;
+        border: 1px solid #a8a8a8;
+        border-radius: 9px;
+        cursor: pointer;
+        color: #a8a8a8;
+      }
 
-        .nav button:hover{
-            color: black;
-            border: 1px solid black;
-            border-radius: 9px;
-        }
-	    
-	.nav a:hover {
-            color: black;
-	}
-	    
-        #copyMessage {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 12pt;
-            color: #ddd;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
+      .nav button:hover {
+        color: white; /* Inverted color */
+        border: 1px solid white; /* Inverted color */
+        border-radius: 9px;
+      }
 
-    	#long a, span, .nav a {
-    		color: hotpink;
-    	}
+      .nav a:hover {
+        color: white; /* Inverted color */
+      }
+
+      #copyMessage {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12pt;
+        color: #ddd;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      #long a,
+      span,
+      .nav a {
+        color: hotpink;
+      }
 
     </style>
   </head>
