@@ -23,7 +23,7 @@ function init() {
   const container = document.getElementById("mainScene");
         
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xffffff);
+  scene.background = new THREE.Color(0x000000);
 
   camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.001, 500);
   camera.position.set(0, 0, 120);
