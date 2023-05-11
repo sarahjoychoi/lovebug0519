@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>lovebug</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/index.css"/>
+  </head>
+  <body>
+
+    <div class="navbar">
+      <span class="help" onclick="openLightbox()">?</span>
+      <span><a href="about.html">about</a></span>
+      <span class="mute" onclick="toggleMute()">mute</span>
+      <span class="subtitleButton">subtitles</span>
+      <div class="subtitleMenu">
+      <p id="toggleSubtitle">none</p>
+        <div class="subLang">
+            <p id="en">EN</p>
+            <p>-</p>
+            <p id="fr">FR</p> 
+        </div>
+       </div>
+    </div>
+    
+    <div id="mainScene"></div>
+
+    <div id="lightbox-background">
+    <div id="lightbox-container">
+      <video id="lightbox-video" autoplay loop>
+        <source src="vid/instructions.mp4" type="video/mp4">
+      </video>
+      <div id="close-button" onclick="closeLightbox()">click to begin</div>
+    </div>
+</div>
+    
+    <div id="subtitles">
+      <div class="subtitle1"></div>
+      <div class="subtitle2"></div>
+      <div class="subtitle3"></div>
+      <div class="subtitle4"></div>
+      <div class="subtitle5"></div>
+    </div>
+    
+    <audio src="audio/background.wav" loop id="bgm">
+ 
+    <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/loaders/DRACOLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/utils/SkeletonUtils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/loaders/RGBELoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="js/script.js" onerror="reloadScene()"></script>
+    <script>  
+    window.addEventListener('load', function() {
+        var audio = document.getElementById('bgm');
+        audio.play();
+      });
+      
+      function toggleMute() {
+        var audio = document.getElementById("bgm");
+        audio.muted = !audio.muted;
+      }
+      
+      function openLightbox() {
+        var lightboxBackground = document.getElementById("lightbox-background");
+        var lightboxVideo = document.getElementById("lightbox-video");
+        lightboxVideo.currentTime = 0;
+        lightboxBackground.style.display = "flex";
+      }
+
+      function closeLightbox() {
+        var lightboxBackground = document.getElementById("lightbox-background");
+        lightboxBackground.style.display = "none";
+      }
+      
+      function reloadScene() {
+        var mainScene = document.getElementById('mainScene');
+        mainScene.innerHTML = '';
+        location.reload();
+      }
+
+      var video = document.getElementById("lightbox-video");
+
+      video.addEventListener("error", function() {
+        console.log("Video failed to load");
+        video.load();
+        video.play();
+      });
+
+      var bgm = document.getElementById("bgm");
+
+      bgm.addEventListener("error", function() {
+        console.log("BGM audio failed to load");
+        bgm.load();
+        bgm.play();
+      });
+    </script>
+  </body>
+</html>

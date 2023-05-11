@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>about</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <style>
+    	body{
+    		height: auto;
+    		width: 100%;
+    		padding: 20px;
+    		font-family: Helvetica;
+           	box-sizing: border-box;
+    	}
+
+        #short {
+          	overflow: hidden;
+        }
+
+        #long {
+          	overflow-y: scroll;
+        }
+
+    	div{
+    		font-size: 18pt;
+    		width: 80vw;
+            	margin: auto;
+    	}
+
+        a{
+            text-decoration: none;
+        }
+
+        #sarah, .credits, #contribute:hover {
+            color: black;
+        }
+
+        #sarah:hover, .credits:hover {
+            color: hotpink;
+        }
+	
+        .nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Helvetica;
+        font-size: 12pt;
+        color: #a8a8a8;
+        height: 10px;
+        }
+
+        .nav button {
+            margin: 0 15px;
+            background-color: transparent;
+            border: 1px solid #a8a8a8;
+            border-radius: 9px;
+            cursor: pointer;
+            color: #a8a8a8;
+        }
+
+        .nav button:hover{
+            color: black;
+            border: 1px solid black;
+            border-radius: 9px;
+        }
+	    
+	.nav a:hover {
+            color: black;
+	}
+	    
+        #copyMessage {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12pt;
+            color: #ddd;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+    	#long a, span, .nav a {
+    		color: hotpink;
+    	}
+
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+        <button onclick="showShort()">120 words</button>
+        <button onclick="showLong()">300 words</button>
+        <button onclick="copyEmail()">contact</button>
+        <button><a href="index.html">x</a></button>
+    </div>
+  	<div id="short">
+		<p><a href="https://sarahjoy.fr/" id="sarah">Sarah Yeonkyung Choi</a> is a designer and researcher from Seoul, South Korea who experiments with language and structure in her practice. Her thesis project, <span>LOVEBUG</span>, is a web-based exploration of storytelling as a spatial practice and of the internet as home. Thinking about designing interiority, <span>LOVEBUG</span> is a non-linear reading experience of personal texts that use sound, movement, and fragmentation to protect their intimacy. It houses the shame, the dirty, and the desperation that we feel in the face of love.</p>
+		<p>Advised by <a href="http://www.miyovanstenis.com/" class="credits">Miyö Van Stenis</a>, <a href="https://labrodavis.com/" class="credits">Clarisse Labro</a>, <a href="https://www.evan-roth.com/~/shows#hemisphere=east&ratio=0.177&strand=120" class="credits">Evan Roth</a></p>
+		<p>Model by <a href="https://boycraft.jp/" class="credits">Yuki Yasuda</a></p>
+		<p>Some phrases repurposed from <a href="https://hmirra.net/" class="credits">Helen Mirra</a>'s <a href="https://www.merve.de/index.php/book/show/561" class="credits"><em>Escritura-a-través</em></a></p>
+		
+	</div>
+	<div id="long" style="display:none;">
+		<p><span>LOVEBUG</span> is a web-based exploration of storytelling as a spatial practice and of the internet as home.</p>
+		<p>It’s summer in Seoul. It’s been raining for a month straight and the song of cicadas blows tiny bombs in your brain, at a regular tempo. You see a cluster of cicadas on your browser, each housing an audio segment from a larger story and reflecting, barely recognizably, its setting. As soon as you touch one, you enter into a microcosm of a specific time, place, and FEELING.</p>
+		<p>That is Sarah’s story. Sarah Yeonkyung Choi is a designer and researcher from Seoul, South Korea who experiments with language and structure in her practice. She wants to expand <span>LOVEBUG</span> into an online archive that houses the shame, the ugly, and the desperation that we feel in the face of love. The website is forever in-progress: Are you a <span>LOVEBUG</span>? <a href="https://formfacade.com/public/114998457455496590333/home/form/1FAIpQLSdRQZ_N09DzJaVg9qiKd-i89rLzYZgHiv9il1cNKIID7rvIlA" id="contribute">Contribute!</a></p>
+		<p>The internet is a refuge for our generation. It’s our treasure box of sleepover stories, our darkest secrets, and our deepest feelings of desire and disgust, tucked safely under our bed. How do you design for interiority? For spaces that shelter, that conceal, that keep warm and soft…</p>
+		<p>Why bugs? The metaphor of bugs comes from a.) the fact that, in love, we feel just as small, dirty, and naive and b.) the perennial human fascination with insects in literature and poetry, from haikus to Kafka, for its qualities of both beauty and beast.</p>
+		<p><span>LOVEBUG</span> aims to shelter the intimacy of personal texts through translation, sound, and interactive web design.</p>
+	</div>
+	</body>
+    <script>
+        function showShort() {
+	  document.getElementById("short").style.display = "block";
+	  document.getElementById("long").style.display = "none";
+	}
+
+	function showLong() {
+	  document.getElementById("short").style.display = "none";
+	  document.getElementById("long").style.display = "block";
+	}
+
+        function copyEmail() {
+        const el = document.createElement('textarea');
+        el.value = 'sarahjoychoi@gmail.com';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        alert("email address copied!");
+        }
+    </script>
+</html>
