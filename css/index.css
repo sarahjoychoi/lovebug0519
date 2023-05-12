@@ -126,8 +126,8 @@
       transform: translateX(-50%);
       font-family: Helvetica;
       font-size: 10pt;
-      color: white;
-      border: 1px solid white;
+      color: black;
+      border: 1px solid black;
       border-radius: 9px;
       padding: 2px 5px;
       opacity: 1;
